@@ -9,6 +9,11 @@ In this approach the task is to achieve more than 90% accuracy using significant
 The second and third approach code is based on tutorials presented in ray repository.
 
 ### Input features combinations
+<BR>
+
+
+## Analysis and results
+Attached [notebook](Performance_comparison.ipynb) contains comparison of performance of described approaches and some analysis of the obtained results.
 
 ### Other files
 * [helpers.py](./src/helpers.py) contains some functions, which help keeping main scripts clear
