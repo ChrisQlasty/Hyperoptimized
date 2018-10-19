@@ -5,9 +5,19 @@ In this approach the task is to achieve more than 90% accuracy using significant
 ## Approaches to build training scripts
 * First approach utilizes the hyperopt library only and runs training trials sequentially. The hyperparameter sampling is optimized. The code to the script can be found in the [hyperTR.py](./src/hyperTR.py) file.
 * Second approach utilizes the ray library only and runs training trials in parallel. The hyperparameters here are sampled randomly through the whole experiment. The code to the script can be found in the [tuneTR.py](./src/tuneTR.py) file.
-* Third approach utilizes both the hyperopt and ray libraries. It runs training trials in parallel and optimizes the hyperparameters. The code to the script can be found in the [hypertuneTR.py](./src/hypertuneTR.py) file.
+* Third approach utilizes both the hyperopt and ray libraries. It runs training trials in parallel and optimizes the hyperparameters. The code to the script can be found in the [hypertuneTR.py](./src/hypertuneTR.py) file. <br><br>
+The second and third approach code is based on tutorials presented in ray repository.
 
+### Input features combinations
 
+### Other files
+* [helpers.py](./src/helpers.py) contains some functions, which help keeping main scripts clear
+  * _reset_seeds_ function is self explanatory 
+  * _get_data_ performs division into training, validation and testing sets
+  * _list_indices_ returns a list of positions in a string, where '1's are located
+  * _features_info_ produces a list of allowed combinations of input features
+ * [objective.py](./src/objective.py) is associated with a [tuneTR.py](./src/tuneTR.py) script
+  
 ---
 ### References
 [1] [*"Pose classification in the gesture recognition using the linear optical sensor"* K. Czuszynski, J. Ruminski, J. Wtorek](http://ieeexplore.ieee.org/document/8004989/)  
