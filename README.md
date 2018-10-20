@@ -1,6 +1,6 @@
 # Hyperoptimized
-Once I utilized a grid-search method to find good set of hyperparameters and input features for a small feed-forward neural network. The trainings were performed in MATLAB and almost 50 000 combinations were considered. The aim for the models was to classify dataset containing observations of 3 hand poses. Each pose was described as a set of features and a label. The achieved accuracy on the testing set was 90.02%. More details can be found in [[1]](http://ieeexplore.ieee.org/document/8004989/). <br><br>
-In this approach the task is to achieve more than 90% accuracy using significantly lower number of trials thanks to the hyperopt library [[2]](https://github.com/hyperopt/hyperopt) and by trying to boost calculations speed using Ray [[3]](https://github.com/ray-project/ray). Neural network models are to be constructed utilizing Keras with the Tensorflow backend [[4]](https://github.com/keras-team/keras).
+Once I utilized a grid-search method to find good set of hyperparameters and input features for a small feed-forward neural network. Almost 50 000 trials were considered and the trainings lasted for around 2 days (I used MATLAB for this purpose). The aim for the models was to classify instances from dataset containing observations of 3 hand poses. Each pose was described as a set of features and a label. The achieved accuracy on the testing set was 90.02%. More details can be found in [[1]](http://ieeexplore.ieee.org/document/8004989/). <br><br>
+In this approach the task is to achieve more than 90% accuracy using significantly lower number of trials and in much shorter time thanks to the _hyperopt_ library [[2]](https://github.com/hyperopt/hyperopt) and by trying to boost calculations speed using _ray_ [[3]](https://github.com/ray-project/ray). Neural network models are to be constructed utilizing _Keras_ with the Tensorflow backend [[4]](https://github.com/keras-team/keras).
 
 ## Approaches to build training scripts
 * First approach utilizes the hyperopt library only and runs training trials sequentially. The hyperparameter sampling is optimized. The code to the script can be found in the [hyperTR.py](./src/hyperTR.py) file.
@@ -13,7 +13,7 @@ The second and third approach code is based on tutorials presented in ray reposi
 
 
 ## Analysis and results
-Attached [notebook](Performance_comparison.ipynb) contains comparison of performance of described approaches and some analysis of the obtained results.
+Attached [notebook](Performance_comparison.ipynb) compares performance of described approaches and presents some analysis of the obtained results.
 
 ### Other files
 * [helpers.py](./src/helpers.py) contains some functions, which help keeping main scripts clear
