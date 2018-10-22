@@ -7,7 +7,8 @@ Neural network models are to be constructed utilizing _Keras_ with the Tensorflo
 ## Approaches to build training scripts
 * First approach utilizes the hyperopt library only and runs training trials sequentially. The hyperparameter sampling is optimized. The code to the script can be found in the [hyperTR.py](./src/hyperTR.py) file.
 * Second approach utilizes the ray library only and runs training trials in parallel. The hyperparameters here are sampled randomly through the whole experiment. The code to the script can be found in the [tuneTR.py](./src/tuneTR.py) file.
-* Third approach utilizes both the hyperopt and ray libraries. It runs training trials in parallel and optimizes the hyperparameters. The code to the script can be found in the [hypertuneTR.py](./src/hypertuneTR.py) file. <br><br>
+* Third approach utilizes both the hyperopt and ray libraries. It runs training trials in parallel and optimizes the hyperparameters. The code to the script can be found in the [hypertuneTR.py](./src/hypertuneTR.py) file. <br>
+
 The second and third approach code is based on tutorials presented in ray repository.
 
 ### Input features combinations
@@ -16,6 +17,7 @@ In order to try different combinations of model input features a binary represen
  * binary representation: 1111011
  * zero padding (to make string of length 9 as this is the number of features): '001111011'
  * from the data array select only those columns where '1's appear <br>
+
 We can also put additional restrictions and e.g. consider only combinations, which contain more than _n_min_ features and/or less than _n_max_ features. These operations are performed by funciton _features_info_ in the helpers.py file.
 
 ## Analysis and results
