@@ -11,8 +11,12 @@ Neural network models are to be constructed utilizing _Keras_ with the Tensorflo
 The second and third approach code is based on tutorials presented in ray repository.
 
 ### Input features combinations
-<BR>
-
+In order to try different combinations of model input features a binary representation of a number was used. As there are 9 features in given dataset, one can have 2^9-1=511 combinations (0 features not considered). We can simply sample an integer from the range <1, 511>, convert it to binary, convert it to string and make left zero padding, e.g.:
+ * number sampled: 123
+ * binary representation: 1111011
+ * zero padding (to make string of length 9 as this is the number of features): '001111011'
+ * from the data array select only those columns where '1's appear <br>
+We can also put additional restrictions and e.g. consider only combinations, which contain more than _n_min_ features and/or less than _n_max_ features. These operations are performed by funciton _features_info_ in the helpers.py file.
 
 ## Analysis and results
 Attached [notebook](Performance_comparison.ipynb) compares performance of described approaches and presents some analysis of the obtained results.
