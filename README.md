@@ -9,7 +9,7 @@ Neural network models are to be constructed utilizing _Keras_ with the Tensorflo
 * Second approach utilizes the ray library only and runs training trials in parallel. The hyperparameters here are sampled randomly through the whole experiment. The code to the script can be found in the [tuneTR.py](./src/tuneTR.py) file.
 * Third approach utilizes both the hyperopt and ray libraries. It runs training trials in parallel and optimizes the hyperparameters. The code to the script can be found in the [hypertuneTR.py](./src/hypertuneTR.py) file. <br>
 
-The second and third approach code is based on tutorials presented in ray repository.
+The second and third approach code is based on tutorials presented in ray repository [[5]](https://github.com/ray-project/ray/tree/739ddfa2290ecbbeeae572a7ab1743055379e3a0/examples/hyperopt).
 
 ### Input features combinations
 In order to try different combinations of model input features a binary representation of a number was used. As there are 9 features in given dataset, one can have 2^9-1=511 combinations (0 features not considered). We can simply sample an integer from the range <1, 511>, convert it to binary, convert it to string and make left zero padding, e.g.:
@@ -36,4 +36,5 @@ Attached [notebook](Performance_comparison.ipynb) compares performance of descri
 [1] [*"Pose classification in the gesture recognition using the linear optical sensor"* K. Czuszynski, J. Ruminski, J. Wtorek](http://ieeexplore.ieee.org/document/8004989/)  
 [2] [*Hyperopt: Distributed Asynchronous Hyper-parameter Optimization*](https://github.com/hyperopt/hyperopt)  
 [3] [*Ray: A system for parallel and distributed Python that unifies the ML ecosystem*](https://github.com/ray-project/ray)  
-[4] [*Keras: Deep Learning for humans*](https://github.com/keras-team/keras)
+[4] [*Keras: Deep Learning for humans*](https://github.com/keras-team/keras)  
+[5] [*ray/examples/hyperopt/*](https://github.com/ray-project/ray/tree/739ddfa2290ecbbeeae572a7ab1743055379e3a0/examples/hyperopt)
